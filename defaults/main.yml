@@ -1,0 +1,73 @@
+---
+# defaults file for apps
+
+# defaults file for jenkins
+
+java: java-1.8.0-openjdk
+jenkins_repo: http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+jenkins_repo_dest: /etc/yum.repos.d/jenkins.repo
+jenkins_key: https://jenkins-ci.org/redhat/jenkins-ci.org.key
+jenkins_remove: /var/lib/jenkins
+jenkins_remove_zip: /var/lib/jenkins.zip
+s3_bucket_zip_file_for_jenkins: https://yasansible.s3-us-west-2.amazonaws.com/jenkins.zip
+dest_to_download_the_zip_file: /var/lib
+src_path_of_zip_file: /var/lib/jenkins.zip
+dest_path_of_zip_file: /var/lib
+jenkins_folder_path_to_change_ownership: /var/lib/jenkins
+
+# defaults file for sonar
+
+sonar_url: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-6.4.zip
+sonar_dest: /opt
+sonar_zip_path: /opt/sonarqube-6.4.zip
+sonar_unarchive_path: /opt
+sonar_start: ./sonar.sh start
+sonar_start_dir: /opt/sonarqube-6.4/bin/linux-x86-64
+
+
+# defaults file for tomcat
+
+tomcat_home: /usr/share/tomcat
+tomcat_url: http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.43/bin/apache-tomcat-8.5.43.tar.gz
+dest_to_download_file: /opt/apache-tomcat-8.5.43.tar.gz
+symlink_src: /opt/apache-tomcat-8.5.43
+symlink_path: /usr/share/tomcat
+change_ownership_path: /usr/share/tomcat/
+remove_config: /usr/share/tomcat/conf
+config_file_url_from_s3: https://s3-us-west-2.amazonaws.com/yasansible/tomcatconfig.zip
+dest_path: /usr/share/tomcat
+unarchive_src_path: /usr/share/tomcat/tomcatconfig.zip
+unarchive_dest_path: /usr/share/tomcat
+remove_meta_file: /opt/apache-tomcat-8.5.43/webapps/manager/META-INF/context.xml
+url_for_meta_file_from_s3: https://s3-us-west-2.amazonaws.com/yasansible/metacontexttomcat.zip
+dest_for_meta_file: /opt/apache-tomcat-8.5.43/webapps/manager/META-INF
+unarchive_the_meta_file_src: /opt/apache-tomcat-8.5.43/webapps/manager/META-INF/metacontexttomcat.zip
+unarchive_the_meta_file_dest: /opt/apache-tomcat-8.5.43/webapps/manager/META-INF
+dir_to_start_tomcat: /opt/apache-tomcat-8.5.43/bin
+tomcat_port: 9090
+
+
+# defaults file for nexus
+
+nexus_url_zip: https://s3-us-west-2.amazonaws.com/cicdpoc/nexus-latest-bundle.tar.gz
+dest_to_download_nexus_zip: /usr/local
+nexus_unarchive_src: /usr/local/nexus-latest-bundle.tar.gz
+nexus_unarchive_dest: /usr/local
+nexus_home: /usr/local/nexus
+nexus_fold: /usr/local/nexus-2.14.2-01/
+nexus_sonatype_fold: /usr/local/sonatype-work
+nexus_folder: /usr/local/nexus-2.14.2-01/bin/nexus
+etc_dir: /etc/init.d/nexus
+remove_conf: /usr/local/nexus-2.14.2-01/bin/jsw/conf
+nexus_s3_zip_file_url: https://yasansible.s3-us-west-2.amazonaws.com/nexusconfig.zip
+dest_to_download_zip: /usr/local/nexus-2.14.2-01/bin/jsw
+unarchive_zip_src_path: /usr/local/nexus-2.14.2-01/bin/jsw/nexusconfig.zip
+unarchive_zip_dest_path: /usr/local/nexus-2.14.2-01/bin/jsw
+nexus_port: 8081
+nexus_xml: /usr/local/sonatype-work/nexus/conf/nexus.xml
+nexus_xml_zip_from_s3_url: https://yasansible.s3-us-west-2.amazonaws.com/nexusxml1.zip
+nexus_xml_dest_to_download_zip_file: /usr/local/sonatype-work/nexus/conf
+unarchive_the_zip_src_path: /usr/local/sonatype-work/nexus/conf/nexusxml1.zip
+unarchive_the_zip_dest_path: /usr/local/sonatype-work/nexus/conf
+
+
